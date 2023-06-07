@@ -2,18 +2,19 @@
 import { paragraphs } from './ipsum'
 
 const colors = [
-  '#3C6255',
-  '#61876E',
-  '#A6BB8D',
-  '#EAE7B1',
-  '#A6BB8D',
-  '#61876E',
+  '#40513B',
+  '#609966',
+  '#9DC08B',
 ]
 </script>
 
 <template>
-  <div flex="~ col gap-5">
-    <p v-for="p, idx in paragraphs" :key="idx" :style="{ color: colors[idx % colors.length] }">
+  <div>
+    <p
+      v-for="p, idx in paragraphs" :key="idx" :style="{
+        color: colors[idx % colors.length],
+      }" px2 py1
+    >
       {{ p }}
     </p>
   </div>

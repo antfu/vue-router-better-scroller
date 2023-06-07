@@ -44,7 +44,45 @@ app.mount('#app')
 
 ## Options
 
-// TODO
+### `selectors`
+
+This plugin supports preserving the state of multiple scrollable elements. By passing the selectors object, you can specify which elements you want to preserve the scroll state.
+
+When set to `true``, we will preserve and restore the scroll state of them automatically, when users navigate back and forth (but not `RouteLink` or `router.push` navigation).
+
+You can also pass a custom handler: 
+
+```ts
+createRouterScroller({
+  selectors: {
+    // use default handler for `window`
+    window: true,
+
+    // custom handler for scrolling on `body`
+    body({ to, from, type, savedPosition, element }) {
+      // navigation triggered by RouteLink or router.push
+      if (type === 'push') {
+        return false // disable scroll restoration
+      }
+
+      // navigation triggered by browser back/forward, or router.back()
+      else if (type === 'history') {
+        if (to.fullPath === '/') {
+          // return a custom position
+          return {
+            top: 10
+          }
+        }
+        // custom handling
+        element.scrollTo({
+          ...savedPosition,
+          behavior: 'smooth',
+        })
+      }
+    },
+  },
+})
+```
 
 ## Sponsors
 

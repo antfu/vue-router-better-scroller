@@ -48,7 +48,7 @@ app.mount('#app')
 
 This plugin supports preserving the state of multiple scrollable elements. By passing the selectors object, you can specify which elements you want to preserve the scroll state.
 
-When set to `true``, we will preserve and restore the scroll state of them automatically, when users navigate back and forth (but not `RouteLink` or `router.push` navigation).
+When set to `true`, we will preserve and restore the scroll state of them automatically, when users navigate back and forth (but not `RouteLink` or `router.push` navigation).
 
 You can also pass a custom handler: 
 

@@ -19,7 +19,7 @@ npm i vue-router-better-scroller
 In your main entry:
   
 ```ts
-import { createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { createRouterScroller } from 'vue-router-better-scroller'
 import { createApp } from 'vue'
 import App from './App.vue'
